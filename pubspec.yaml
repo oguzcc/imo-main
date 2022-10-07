@@ -1,0 +1,55 @@
+name: imo
+description: A new Flutter project.
+
+# Prevent accidental publishing to pub.dev.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+  flutter: 3.3.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl:
+  auto_route:
+  go_router:
+  flutter_bloc:
+  rxdart:
+  equatable:
+  dio:
+  logger:
+  hive:
+  hive_flutter:
+  # uı widgets
+  reorderable_grid:
+
+  # util
+  flutter_screenutil:
+  flutter_svg:
+  google_fonts:
+  clipboard:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+  build_runner:
+  auto_route_generator:
+  hive_generator:
+
+flutter:
+  uses-material-design: true
+
+  # Enable generation of localized Strings from arb files.
+  generate: true
+
+  assets:
+    # Add assets from the images directory to the application.
+    - assets/image/
+    - assets/svg/
