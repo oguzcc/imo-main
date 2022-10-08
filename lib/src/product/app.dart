@@ -4,36 +4,23 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'config/style/theme.dart';
-import 'feature/auth/presentation/bloc/auth/auth_bloc.dart';
-import 'feature/home/presentation/cubit/task_cubit.dart';
-import 'feature/settings/theme/cubit/theme_cubit.dart';
+import '../core/style/theme.dart';
+import '../feature/auth/presentation/bloc/auth/auth_bloc.dart';
+import '../feature/home/presentation/cubit/task_cubit.dart';
+import '../feature/settings/theme/cubit/theme_cubit.dart';
 import 'router/router.dart';
 
 final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 final appRouter = AppRouter();
 
 class App extends StatelessWidget {
-  const App({
-    Key? key,
-  }) : super(key: key);
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // Hive.box('shortLinkBox').clear();
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => ThemeCubit(),
-        ),
-        BlocProvider(
-          create: (context) => AuthBloc(context.read(), context.read())
-            ..add(const AuthChangedEvent()),
-        ),
-        BlocProvider(
-          create: (context) => TaskCubit(context.read()),
-        )
-      ],
+      providers: providers(context),
       child: BlocListener<AuthBloc, AuthState>(
         listener: (context, auth) {
           if (auth.state == AuthStatus.authenticating ||
@@ -43,11 +30,11 @@ class App extends StatelessWidget {
               predicate: (route) => false,
             );
           }
-          if (auth.state == AuthStatus.authenticated) {
-            appRouter.replaceAll([const HomeRoute()]);
-          }
           if (auth.state == AuthStatus.unauthenticated) {
             appRouter.replaceAll([const LandingRoute()]);
+          }
+          if (auth.state == AuthStatus.authenticated) {
+            appRouter.replaceAll([const HomeRoute()]);
           }
         },
         child: BlocBuilder<ThemeCubit, ThemeState>(
@@ -81,4 +68,17 @@ class App extends StatelessWidget {
       ),
     );
   }
+
+  List<BlocProvider> providers(BuildContext context) => [
+        BlocProvider(
+          create: (context) => ThemeCubit(),
+        ),
+        BlocProvider(
+          create: (context) => AuthBloc(context.read(), context.read())
+            ..add(const AuthChangedEvent()),
+        ),
+        BlocProvider(
+          create: (context) => TaskCubit(context.read()),
+        )
+      ];
 }

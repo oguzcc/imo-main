@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../config/constant/asset.dart';
-import '../../../../config/style/palette.dart';
-import '../../../../config/style/typography.dart';
+import '../../../../core/style/palette.dart';
+import '../../../../core/style/typography.dart';
+import '../../../../product/config/constant/asset_constant.dart';
 import '../../data/model/short_link.dart';
 import '../../data/source/local/link_box.service.dart';
 import '../bloc/link_bloc.dart';
@@ -319,13 +319,13 @@ class OnboardingBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SvgPicture.asset(
-            AssetSvg.logo,
+            AssetConstant.logo,
             width: .3.sw,
           ),
           Align(
             alignment: Alignment.centerRight,
             child: SvgPicture.asset(
-              AssetSvg.chemistryLab,
+              AssetConstant.chemistryLab,
               width: .9.sw,
             ),
           ),

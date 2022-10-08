@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:imo/src/feature/home/presentation/cubit/task_cubit.dart';
 import 'package:reorderable_grid/reorderable_grid.dart';
 
-import '../../../../router/router.dart';
+import '../../../../product/router/router.dart';
 import '../../../auth/presentation/bloc/auth/auth_bloc.dart';
 
 class HomeView extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:imo/src/app.dart';
+import 'package:imo/src/product/app.dart';
 
 showSnackBarCtx(BuildContext context, String text) {
   return ScaffoldMessenger.of(context)

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-import '../../app.dart';
+import '../../product/app.dart';
 
 class DataException implements Exception {
   DataException(

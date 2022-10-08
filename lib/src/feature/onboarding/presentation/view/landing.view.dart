@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../config/constant/asset.dart';
-import '../../../../config/style/typography.dart';
-import '../../../../router/router.dart';
+import '../../../../core/style/typography.dart';
+import '../../../../product/config/constant/asset_constant.dart';
+import '../../../../product/router/router.dart';
 
 class LandingView extends StatelessWidget {
   const LandingView({Key? key}) : super(key: key);
@@ -34,11 +34,11 @@ class _LandingViewBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SvgPicture.asset(
-                AssetSvg.logo,
+                AssetConstant.logo,
                 width: .3.sw,
               ),
               SvgPicture.asset(
-                AssetSvg.chemistryLab,
+                AssetConstant.chemistryLab,
                 width: 1.sw,
               ),
               Column(

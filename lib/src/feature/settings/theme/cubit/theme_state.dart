@@ -5,19 +5,14 @@ class ThemeState {
 
   ThemeState({required this.themeMode});
 
-  factory ThemeState.lightTheme() {
-    return ThemeState(themeMode: ThemeMode.light);
-  }
+  factory ThemeState.lightTheme() => ThemeState(themeMode: ThemeMode.light);
 
-  factory ThemeState.darkTheme() {
-    return ThemeState(themeMode: ThemeMode.dark);
-  }
+  factory ThemeState.darkTheme() => ThemeState(themeMode: ThemeMode.dark);
 
   ThemeState copyWith({
     ThemeMode? themeMode,
-  }) {
-    return ThemeState(
-      themeMode: themeMode ?? this.themeMode,
-    );
-  }
+  }) =>
+      ThemeState(
+        themeMode: themeMode ?? this.themeMode,
+      );
 }

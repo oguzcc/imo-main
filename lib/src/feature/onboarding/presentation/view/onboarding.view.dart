@@ -1,7 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:imo/src/l10n/l10n.dart';
-import 'package:imo/src/router/router.dart';
+
+import '../../../../product/l10n/l10n.dart';
+import '../../../../product/router/router.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({Key? key}) : super(key: key);
@@ -41,14 +42,14 @@ class _OnboardingViewState extends State<OnboardingView>
             children: [
               Container(
                 color: Colors.purple,
-                child: const Center(
-                  child: Text("l10n"),
+                child: Center(
+                  child: Text(l10n.page1),
                 ),
               ),
               Container(
                 color: Colors.amber,
-                child: const Center(
-                  child: Text('Page 2'),
+                child: Center(
+                  child: Text(l10n.page2),
                 ),
               ),
               Container(

@@ -1,20 +1,20 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../feature/auth/presentation/view/sign_in.view.dart';
-import '../feature/auth/presentation/view/sign_up.view.dart';
-import '../feature/home/data/model/task.dart';
-import '../feature/home/presentation/view/home.view.dart';
-import '../feature/home/presentation/view/idea_form.view.dart';
-import '../feature/home/presentation/view/task_detail.view.dart';
-import '../feature/onboarding/presentation/view/landing.view.dart';
-import '../feature/onboarding/presentation/view/onboarding.view.dart';
-import '../feature/onboarding/presentation/view/splash.view.dart';
-import '../feature/sample_feature/sample_item.dart';
-import '../feature/sample_feature/sample_item_details_view.dart';
-import '../feature/sample_feature/sample_item_list_view.dart';
-import '../feature/settings/settings_view.dart';
-import '../feature/shorten/presentation/view/shorten.view.dart';
+import '../../feature/auth/presentation/view/sign_in.view.dart';
+import '../../feature/auth/presentation/view/sign_up.view.dart';
+import '../../feature/home/data/model/task.dart';
+import '../../feature/home/presentation/view/home.view.dart';
+import '../../feature/home/presentation/view/idea_form.view.dart';
+import '../../feature/home/presentation/view/task_detail.view.dart';
+import '../../feature/onboarding/presentation/view/landing.view.dart';
+import '../../feature/onboarding/presentation/view/onboarding.view.dart';
+import '../../feature/onboarding/presentation/view/splash.view.dart';
+import '../../feature/sample_feature/sample_item.dart';
+import '../../feature/sample_feature/sample_item_details_view.dart';
+import '../../feature/sample_feature/sample_item_list_view.dart';
+import '../../feature/settings/settings_view.dart';
+import '../../feature/shorten/presentation/view/shorten.view.dart';
 
 part 'router.gr.dart';
 
@@ -62,12 +62,12 @@ part 'router.gr.dart';
       page: SampleItemListView,
     ),
     AutoRoute(
-      page: SettingsView,
       path: SettingsView.routeName,
+      page: SettingsView,
     ),
     AutoRoute(
-      page: SampleItemDetailsView,
       path: SampleItemDetailsView.routeName,
+      page: SampleItemDetailsView,
     )
   ],
 )
